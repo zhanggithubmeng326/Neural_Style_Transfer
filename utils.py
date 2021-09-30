@@ -28,7 +28,7 @@ def load_image(img_path):
 
     image = tf.image.resize(image, new_shape)
     image = image[tf.newaxis, :]
-    #image = tf.image.convert_image_dtype(image, tf.uint8)
+    image = tf.image.convert_image_dtype(image, tf.uint8)
 
     return image
 
