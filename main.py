@@ -131,7 +131,7 @@ def fit_style_transfer(style_image, content_image, style_weight=1e-2, content_we
 
 if '__name__' == '__main__':
     content_path = '/home/mzhang/Style_Transfer/content.png'
-    style_path = '/home/mzhang/Style_Transfer/content.png'
+    style_path = '/home/mzhang/Style_Transfer/style.png'
 
     # display the content and style image
     content_image, style_image = utils.load_images(content_path, style_path)
