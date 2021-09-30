@@ -24,7 +24,7 @@ num_style_layers = len(style_layers)
 # build the model of feature extractor using inception model
 def feature_extractor(layers):
     # load Inception V3 with imagenet weights and without fully connected layer at the top of the network
-    inception= tf.keras.applications.InceptionV3(include_top=False, weights='imagenet')
+    inception = tf.keras.applications.inception_v3.InceptionV3(include_top=False, weights='imagenet')
 
     # freeze the weights of the model
     inception.trainable = False
