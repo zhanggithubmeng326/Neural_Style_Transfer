@@ -23,7 +23,6 @@ def tensor_to_img(tensor):
     return PIL.Image.fromarray(tensor)
 
 
-
 # loads an image as a tensor and scales it to 512 pixels
 def load_image(img_path):
     max_dim = 512
@@ -40,7 +39,7 @@ def load_image(img_path):
 
     image = tf.image.resize(image, new_shape)
     image = image[tf.newaxis, :]
-    image = tf.image.convert_image_dtype(image, tf.uint8)
+    #image = tf.image.convert_image_dtype(image, tf.uint8)
 
     return image
 

@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import tensorflow as tf
 import utils
 
@@ -9,4 +10,8 @@ c_img = utils.load_image(content_path)
 s_img = utils.load_image(style_path)
 
 if __name__ == '__main__':
-    utils.show_images_with_objects([c_img, s_img], titles=['c', 's'])
+    plt.subplot(1, 2, 1)
+    utils.imshow(c_img, 'content_img')
+    
+    plt.subplot(1, 2, 2)
+    utils.imshow(s_img, 'style_img')
