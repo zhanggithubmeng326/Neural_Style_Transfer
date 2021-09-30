@@ -1,8 +1,6 @@
 """" implementation of neural style transfer using the VGG19 model as feature extractor"""
 
 import tensorflow as tf
-import matplotlib.pyplot as plt
-import tensorflow.keras.backend as k
 from IPython.display import display as display_fn
 from IPython.display import Image, clear_output
 import utils
