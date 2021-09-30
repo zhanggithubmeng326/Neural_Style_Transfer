@@ -16,7 +16,7 @@ def tensor_to_image(tensor):
 def load_image(img_path):
     max_dim = 512
     image = tf.io.read_file(img_path)
-    image = tf.image.decode_jpeg(image)
+    image = tf.image.decode_jpeg(image, channels=3)
     image = tf.image.convert_image_dtype(image, tf.float32)
 
     shape = tf.shape(image)[:-1]    # [height, width]
@@ -28,7 +28,7 @@ def load_image(img_path):
 
     image = tf.image.resize(image, new_shape)
     image = image[tf.newaxis, :]
-    image = tf.image.convert_image_dtype(image, tf.uint8)
+    #image = tf.image.convert_image_dtype(image, tf.uint8)
 
     return image
 
@@ -37,7 +37,7 @@ def load_images(content_path, style_path):
     content_image = load_image(content_path)
     style_image = load_image(style_path)
 
-    return  content_image, style_image
+    return content_image, style_image
 
 
 # displays an image with a title

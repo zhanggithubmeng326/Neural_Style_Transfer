@@ -135,7 +135,7 @@ if '__name__' == '__main__':
 
     # display the content and style image
     content_image, style_image = utils.load_images(content_path, style_path)
-    utils.show_images_with_objects(images=[content_image, style_image], titles=['content.png', 'style.content'])
+    utils.show_images_with_objects(images=[content_image, style_image], titles=['content.jpg', 'style.jpg'])
 
     STYLE_WEIGHT = 1
     CONTENT_WEIGHT = 1e-32
