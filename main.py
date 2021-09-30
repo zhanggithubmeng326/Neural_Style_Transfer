@@ -11,9 +11,9 @@ import utils
 content_layers = ['conv2d_88']
 
 style_layers = ['conv2d',
-                'con2d_1',
-                'con2d_2',
-                'con2d_3',
+                'conv2d_1',
+                'conv2d_2',
+                'conv2d_3',
                 'conv2d_4']
 
 total_layers = content_layers + style_layers
