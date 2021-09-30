@@ -91,8 +91,7 @@ def calculate_gradients(image, style_targets, content_targets, style_weight, con
 
 
 # generate the stylized image
-def fit_style_transfer(style_image, content_image, style_weight=1e-2, content_weight=1e-4,
-                       optimizer_name='adam', epochs=1, steps_per_epoch=1):
+def fit_style_transfer(style_image, content_image, epochs, steps_per_epoch, style_weight=1e-2, content_weight=1e-4):
     images = []
     step = 0
     style_targets = get_style_image_features(style_image)
