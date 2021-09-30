@@ -114,7 +114,7 @@ def fit_style_transfer(style_image, content_image, epochs, steps_per_epoch, styl
 
         # display the current stylized image
         clear_output(wait=True)
-        display_image = utils.tensor_to_image(generated_image)
+        display_image = utils.tensor_to_img(generated_image)
         display_fn(display_image)
 
         images.append(generated_image)
@@ -122,7 +122,7 @@ def fit_style_transfer(style_image, content_image, epochs, steps_per_epoch, styl
 
         # convert to uint8 (expected dtype for images with pixels in the range [0,255])
         generated_image = tf.cast(generated_image, dtype=tf.uint8)
-
+        utils.tensor_to_img(generated_image)
         return generated_image, images
 
 

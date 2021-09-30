@@ -1,5 +1,7 @@
+import PIL.Image
 import matplotlib.pyplot as plt
 import tensorflow as tf
+import numpy as np
 
 
 # converts a tensor to an image
@@ -10,6 +12,16 @@ def tensor_to_image(tensor):
         assert tensor_shape[0] == 1
         tensor = tensor[0]
     return tf.keras.preprocessing.image.array_to_img(tensor)
+
+
+def tensor_to_img(tensor):
+    tensor = tensor * 255
+    tensor = np.array(tensor, dtype=np.uint8)
+    if np.ndim(tensor) > 3:
+        assert tensor.shape[0] == 1
+        tensor = tensor[0]
+    return PIL.Image.fromarray(tensor)
+
 
 
 # loads an image as a tensor and scales it to 512 pixels
