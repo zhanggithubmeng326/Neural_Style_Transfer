@@ -33,7 +33,7 @@ def feature_extractor(layers):
     output_layers = [inception.get_layer(name).output for name in layers]
 
     # create model
-    model = tf.keras.Model(input_dim=inception.input, outputs=output_layers)
+    model = tf.keras.Model(input=inception.input, outputs=output_layers)
 
     return model
 
