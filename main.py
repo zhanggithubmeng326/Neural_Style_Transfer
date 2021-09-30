@@ -129,7 +129,7 @@ def fit_style_transfer(style_image, content_image, style_weight=1e-2, content_we
         return generated_image, images
 
 
-if '__name__' == '__main__':
+if __name__ == '__main__':
     content_path = '/home/mzhang/Style_Transfer/content.jpg'
     style_path = '/home/mzhang/Style_Transfer/style.jpg'
 
