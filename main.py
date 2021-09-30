@@ -139,7 +139,7 @@ if '__name__' == '__main__':
 
     STYLE_WEIGHT = 1
     CONTENT_WEIGHT = 1e-32
-    EPOCHS = 20
+    EPOCHS = 30
     STEPS_PER_EPOCH = 100
 
     styled_image, display_images = fit_style_transfer(style_image=style_image, content_image=content_image,
