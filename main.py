@@ -8,13 +8,13 @@ from IPython.display import Image, clear_output
 import utils
 
 # choose corresponding layers of content and style images
-content_layers = ['block5_conv2']
+content_layers = ['conv2d_88']
 
-style_layers = ['block1_conv1',
-                'block2_conv1',
-                'block3_conv1',
-                'block4_conv1',
-                'block5_conv1']
+style_layers = ['conv2d',
+                'conv2d_1',
+                'conv2d_2',
+                'conv2d_3',
+                'conv2d_4']
 
 total_layers = content_layers + style_layers
 num_content_layers = len(content_layers)
@@ -24,16 +24,16 @@ num_style_layers = len(style_layers)
 # build the model of feature extractor using VGG19 model
 def feature_extractor(layers):
     # load Inception V3 with imagenet weights and without fully connected layer at the top of the network
-    vgg = tf.keras.applications.vgg19.VGG19(include_top=False, weights='imagenet')
+    inception = tf.keras.applications.inception_v3.InceptionV3(include_top=False, weights='imagenet')
 
     # freeze the weights of the model
-    vgg.trainable = False
+    inception.trainable = False
 
     # create a list of layers
-    output_layers = [vgg.get_layer(name).output for name in layers]
+    output_layers = [inception.get_layer(name).output for name in layers]
 
     # create model
-    model = tf.keras.Model([vgg.input], outputs=output_layers)
+    model = tf.keras.Model([inception.input], outputs=output_layers)
 
     return model
 
