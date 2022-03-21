@@ -14,7 +14,7 @@ style_layers = ['conv2d',
                 'conv2d_3',
                 'conv2d_4']
 
-total_layers = content_layers + style_layers
+total_layers = style_layers + content_layers
 num_content_layers = len(content_layers)
 num_style_layers = len(style_layers)
 
